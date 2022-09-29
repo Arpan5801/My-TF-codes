@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: arpan-daemonset
+spec: 
+  selector: 
+    matchLabels: 
+      name: my-cluster-pods
+  template:
+    metadata:
+      labels:
+        name: my-cluster-pods
+    spec: 
+      containers: 
+        - name: pod-antivirus
+          image: httpd    
