@@ -18,7 +18,7 @@ resource "google_compute_network" "axis-test" {
 
 resource "google_compute_instance" "default" {
   name         = "test"
-  machine_type = "e2-medium"
+  machine_type = "e2-small"
   zone         = "us-central1-a"
 
   boot_disk {
