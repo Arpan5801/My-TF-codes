@@ -1,3 +1,9 @@
+provider "google" {
+  project = "brave-drummer-370205"
+
+}
+
+
 resource "google_compute_subnetwork" "subnet-us-central" {
   name          = "us-central"
   ip_cidr_range = "100.10.10.0/24"
