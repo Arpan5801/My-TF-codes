@@ -1,3 +1,15 @@
+resource "google_compute_subnetwork" "subnet-us-central" {
+  name          = "us-central"
+  ip_cidr_range = "100.10.10.0/24"
+  region        = "us-central1"
+  network       = google_compute_network.axis-test.id  
+}
+
+resource "google_compute_network" "axis-test" {
+  name                    = "axix-vpc"
+  auto_create_subnetworks = false
+}
+
 resource "google_compute_instance" "default" {
   name         = "test"
   machine_type = "e2-medium"
