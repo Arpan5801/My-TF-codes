@@ -43,9 +43,6 @@ allow_stopping_for_update = true
   }
 }
 
-lifecycle {
-    create_before_destroy = true
-  }
 
 resource "google_compute_firewall" "default-fire" {
   name    = "my-firewall"
