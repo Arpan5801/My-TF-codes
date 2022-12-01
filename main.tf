@@ -30,6 +30,10 @@ allow_stopping_for_update = true
     }
   }
 
+  
+  lifecycle {
+    create_before_destroy = true
+  }
 
 
   network_interface {
