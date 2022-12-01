@@ -1,6 +1,5 @@
 provider "google" {
   project = "brave-drummer-370205"
-
 }
 
 
@@ -20,7 +19,11 @@ resource "google_compute_instance" "default" {
   name         = "test"
   machine_type = "e2-small"
   zone         = "us-central1-a"
+  tags         = ["web"]
+
 allow_stopping_for_update = true
+  
+  
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-10"
@@ -38,4 +41,26 @@ allow_stopping_for_update = true
       // Ephemeral public IP
     }
   }
+}
+
+lifecycle {
+    create_before_destroy = true
+  }
+
+resource "google_compute_firewall" "default-fire" {
+  name    = "my-firewall"
+  network = google_compute_network.axis-test.name 
+  priority = "1000"
+
+  source_ranges = ["0.0.0.0/0"]
+
+  allow {
+    protocol = "icmp"
+  }
+  allow {
+    protocol = "tcp"
+    ports    = ["80", "22", "25"]
+  }
+
+    target_tags = ["web"]
 }
