@@ -68,5 +68,5 @@ resource "google_compute_firewall" "default-fire" {
 
 
 resource "time_sleep" "wait-some-time" {
-  create_duration = "5m"
+  create_duration = "2m"
 }
