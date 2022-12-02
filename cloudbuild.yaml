@@ -35,10 +35,4 @@ steps:
   
 # [END tf-apply] 
 
-# [START tf-destroy]
-- id: 'tf destroy'
-  name: 'hashicorp/terraform:1.0.0'
-  entrypoint: 'sh'
-  args: 
-  - '-c'
-  - terraform destroy -auto-approve  
+  
