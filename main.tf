@@ -65,8 +65,3 @@ resource "google_compute_firewall" "default-fire" {
 
     target_tags = ["web"]
 }
-
-
-resource "time_sleep" "wait-some-time" {
-  create_duration = "2m"
-}
