@@ -11,7 +11,7 @@ resource "google_compute_subnetwork" "subnet-us-central" {
 }
 
 resource "google_compute_network" "axis-test" {
-  name                    = "axix-vpc"
+  name                    = "axix-vpc1"
   auto_create_subnetworks = false
 }
 
