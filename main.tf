@@ -17,7 +17,7 @@ resource "google_compute_subnetwork" "subnet-asia-southeast1" {
 }
 
 resource "google_compute_network" "custom-test" {
-  name                    = "pnb-vpc-1"
+  name                    = "pnb-vpc-2s"
   auto_create_subnetworks = false
 }
 
